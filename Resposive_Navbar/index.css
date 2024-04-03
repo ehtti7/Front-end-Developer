@@ -1,0 +1,117 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: lato, sans-serif;
+}
+
+/* ------------- Nav Bar -------------- */
+
+body header {
+    width: 100%;
+    border-bottom: 1px solid #555;
+    background-color: #0c2731;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+nav {
+    margin: 0px 5% 0px 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+nav #logo {
+    width: 130px;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    padding: 20px 20px;
+    border-radius: 3px;
+}
+nav ul li a.active, nav ul li a:hover {
+    color: #ffffffcd;
+    background-color: #444;
+    transition: .5s ease;
+}
+
+
+/* --------------- Menu-Bar Button --------------- */
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+/* ------------- Responsive Nav Bar -------------- */
+
+@media (max-width: 952px) {
+    label.logo {
+        font-size: 30px;
+        padding-left: 50px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: transparent;
+        backdrop-filter: blur(20px);
+        top: 80px;
+        right: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: #0c2731;
+    }
+
+    nav ul li a.active, nav ul li a:hover {
+        color: white;
+        background-color: #0c2731;
+        transition: .5s ease;
+    }
+    
+    #check:checked~ul {
+        right: 0;
+    }
+}
